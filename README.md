@@ -1,6 +1,5 @@
 # babibtex
-bash bibtex generator (art2bib)
-The name is a short for bash bibtex file or article to bibtex file.
+The name is a short for bash bibtex file or article to bibtex file (art2bib).
 This script will print bibtex of an article or a book from DOI, ISBN, ArXiv or PMID.
 
 ### dependencies
@@ -24,7 +23,7 @@ You can use the first letter or the full name of the reference system.
   
 To make a bib file of your own library, (if you have your pdfs with the important informations between brackets):  
 `find -type f -iname '*.pdf' | sed 's/^.*\[//; s/\].*//'`   
-Now, the input of the entire library are ready for the program, we will use the while loop to find all the bib files:
+Now, the input of the entire library are ready for the script, we will use the while loop to find all the bib files:
 `while read i; do art2bib $i ; done < <( find -type f -iname '*.pdf' | sed 's/^.*\[//; s/\].*//' ) > list.bib`  
 The file called list.bib is ready !
 
