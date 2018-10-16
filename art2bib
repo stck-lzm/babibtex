@@ -39,10 +39,12 @@ while true ; do
 	  | sed 's/<.PRE>//;x;1d'; 
 	echo "";
 	exit 1;;
+    h|help|-h|--help)
+        showhelp;exit 1;;
     --) 
        shift; break;;
     **)	
-       showhelp;exit 1;;
+       exit 1;;
   esac
 done
 exit 1
