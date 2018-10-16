@@ -14,7 +14,7 @@ It requires:
 To execute the script give it execute right.  
 `chmod +x art2bib`
   
-To test a file:  
+Some tests for fun:  
 `./art2bib d 10.1142%2F10409`  
 `./art2bib isbn 0323030645`  
 `./art2bib a 1108.2700`  
@@ -22,7 +22,7 @@ To test a file:
 Those are some random examples.
 You can use the first letter or the full name of the reference system.  
   
-To make a bib file of your own library, (if you have like me all your pdfs with the important informations between brackets):  
+To make a bib file of your own library, (if you have your pdfs with the important informations between brackets):  
 `find -type f -iname '*.pdf' | sed 's/^.*\[//; s/\].*//'`   
 Now, the input of the entire library are ready for the program, we will use the while loop to find all the bib files:
 `while read i; do art2bib $i ; done < <( find -type f -iname '*.pdf' | sed 's/^.*\[//; s/\].*//' ) > list.bib`  
