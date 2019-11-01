@@ -15,7 +15,7 @@ TEMP=$(getopt -o ":d:i:a:p:"  --long "doi:,isbn:,arxiv:,pmid:" -- "$@")
 while true ; do
   case "$1" in
     d|doi)	
-       wget -qO- "https://www.doi2bib.org/doi2bib?id=$2"; 
+       wget -qO- --header "Accept:application/x-bibtex; charset=utf-8" https://doi.org/$2; 
        echo "";
        exit 1;;
     i|isbn)	 
